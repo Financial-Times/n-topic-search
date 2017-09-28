@@ -29,11 +29,13 @@ class TopicSearch {
 		listComponent = suggestionList,
 		preSuggest = a => a
 	} = {}) {
+		const host = /local(?:host)?\.ft\.com/.test(window.location.host) ? window.location.host : 'www.ft.com';
+
 		this.container = containerEl;
 		this.listComponent = listComponent;
 		this.preSuggest = preSuggest;
 		this.searchEl = this.container.querySelector('[data-n-topic-search-input]');
-		this.dataSrc = `//${window.location.host}/search-api/suggestions?partial=`;
+		this.dataSrc = `//${host}/search-api/suggestions?partial=`;
 		this.categories = (this.container.getAttribute('data-n-topic-search-categories') || 'tags').split(',');
 		this.itemTag = this.container.getAttribute('data-n-topic-search-item-tag') || 'a';
 		this.includeViewAllLink = this.container.hasAttribute('data-n-topic-search-view-all');

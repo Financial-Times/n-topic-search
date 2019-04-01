@@ -1,6 +1,7 @@
-const Delegate = require('ftdomdelegate');
+import Delegate from 'ftdomdelegate'
 import { debounce } from 'n-ui-foundations';
 import suggestionList from './src/renderers/search-suggestions';
+
 const host = /local(?:host)?\.ft\.com/.test(window.location.host) ? window.location.host : 'www.ft.com';
 
 function getNonMatcher (container) {

@@ -1,7 +1,8 @@
-const Delegate = require('ftdomdelegate');
+import Delegate from 'ftdomdelegate'
 import { debounce } from 'n-ui-foundations';
 import suggestionList from './src/renderers/search-suggestions';
-const host = /local(?:host)?\.ft\.com/.test(window.location.host) ? window.location.host : 'www.ft.com';
+
+const defaultHostName = /local(?:host)?\.ft\.com/.test(window.location.host) ? window.location.host : 'www.ft.com';
 
 function getNonMatcher (container) {
 	if (typeof container === 'string') {
@@ -28,13 +29,14 @@ function isOutside (el, container) {
 class TopicSearch {
 	constructor (containerEl, {
 		listComponent = suggestionList,
-		preSuggest = a => a
+		preSuggest = a => a,
+		hostName = defaultHostName
 	} = {}) {
 		this.container = containerEl;
 		this.listComponent = listComponent;
 		this.preSuggest = preSuggest;
 		this.searchEl = this.container.querySelector('[data-n-topic-search-input]');
-		this.dataSrc = `//${host}/search-api/suggestions?partial=`;
+		this.dataSrc = `//${hostName}/search-api/suggestions?partial=`;
 		this.categories = (this.container.getAttribute('data-n-topic-search-categories') || 'tags').split(',');
 		this.itemTag = this.container.getAttribute('data-n-topic-search-item-tag') || 'a';
 		this.includeViewAllLink = this.container.hasAttribute('data-n-topic-search-view-all');

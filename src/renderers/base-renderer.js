@@ -1,4 +1,4 @@
-const morphdom = require('morphdom');
+import morphdom from 'morphdom';
 
 function regExpEscape (s) {
 	return s.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');

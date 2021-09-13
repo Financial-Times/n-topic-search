@@ -6,3 +6,4 @@ pa11y_screenCapture
 .eslintrc.js
 .stylelintrc
 package-lock.json
+*.env*

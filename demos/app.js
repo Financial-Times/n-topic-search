@@ -1,29 +1,24 @@
 'use strict';
 
-const express = require('@financial-times/n-internal-tool');
+const nExpress = require('@financial-times/n-express');
 const chalk = require('chalk');
 const errorHighlight = chalk.bold.red;
 const highlight = chalk.bold.green;
+const path = require('path');
 
-const app = module.exports = express({
+const app = module.exports = nExpress({
 	name: 'public',
 	systemCode: 'n-topic-search-demo',
 	withFlags: false,
-	withHandlebars: true,
-	withNavigation: false,
+	withConsent: false,
+	withServiceMetrics: false,
 	withAnonMiddleware: false,
-	hasHeadCss: false,
-	layoutsDir: 'demos/templates',
-	viewsDirectory: '/demos/templates',
-	partialsDirectory: process.cwd(),
-	directory: process.cwd(),
 	demo: true,
-	s3o: false
+	withBackendAuthentication: false,
 });
 
-app.get('/', (req, res) => {
-	res.render('demo');
-});
+app.use('/', nExpress.static(path.join(process.cwd(), '/demos'), { redirect: false }));
+app.use('/public', nExpress.static(path.join(process.cwd(), '/public'), { redirect: false }));
 
 app.get('/search-api/suggestions', (req, res) => {
 	res.json(require('./fixtures/suggestions'));

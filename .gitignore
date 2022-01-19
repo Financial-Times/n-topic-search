@@ -5,5 +5,4 @@ pa11y_screenCapture
 .editorconfig
 .eslintrc.js
 .stylelintrc
-package-lock.json
 *.env*

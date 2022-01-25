@@ -5,7 +5,7 @@ references:
   container_config: &container_config
     working_directory: ~/project/build
     docker:
-      - image: circleci/node:14-browsers
+      - image: circleci/node:12-browsers
 
   workspace_root: &workspace_root ~/project
 
@@ -48,7 +48,10 @@ references:
     branches:
       ignore: /.*/
 
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@4.6.0
 
 jobs:
   build:
@@ -59,6 +62,8 @@ jobs:
           name: Checkout next-ci-shared-helpers
           command: git clone --depth 1 git@github.com:Financial-Times/next-ci-shared-helpers.git .circleci/shared-helpers
       - *restore_npm_cache
+      - node/install-npm:
+          version: "7"
       - run:
           name: Install project dependencies
           command: make install

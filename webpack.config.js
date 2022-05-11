@@ -5,7 +5,6 @@ build.
 If something is required for both, please add it here.
 */
 
-const BowerResolvePlugin = require('bower-resolve-webpack-plugin');
 
 module.exports = {
 	// Abort the compilation on first error
@@ -18,21 +17,15 @@ module.exports = {
 	},
 	resolve: {
 
-		plugins: [
-			// This will handle a bower.json's `main` property being an array.
-			new BowerResolvePlugin()
-		],
-
 		// In which folders the resolver look for modules relative paths are
 		// looked up in every parent folder (like node_modules) absolute
 		// paths are looked up directly the order is respected
 		modules: [
-			'bower_components',
 			'node_modules',
 		],
 
 		// These JSON files are read in directories
-		descriptionFiles: ['bower.json', 'package.json'],
+		descriptionFiles: ['package.json'],
 
 		// These fields in the description files are looked up when trying to resolve the package directory
 		mainFields: ['main', 'browser'],

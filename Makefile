@@ -6,7 +6,7 @@ node_modules/@financial-times/n-gage/index.mk:
 
 demo-build:
 	@webpack
-	@node-sass demos/src/demo.scss public/main.css --include-path bower_components
+	@sass demos/src/demo.scss public/main.css --load-path node_modules
 	@$(DONE)
 
 demo: demo-build

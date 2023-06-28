@@ -11,7 +11,7 @@
     "n-ui-foundations": "^9.0.0"
   },
   "devDependencies": {
-    "@financial-times/n-express": "^22.1.3",
+    "@financial-times/n-express": "27.4.0",
     "@financial-times/n-gage": "^8.3.2",
     "chalk": "^2.0.1",
     "check-engine": "^1.10.1",

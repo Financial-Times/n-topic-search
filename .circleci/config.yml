@@ -6,8 +6,6 @@ references:
     working_directory: ~/project/build
     docker:
       - image: cimg/node:<< parameters.node-version >>-browsers
-    environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     parameters:
       node-version:
         default: "18.16"
@@ -62,8 +60,6 @@ orbs:
 jobs:
   build:
     <<: *container_config
-    environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     steps:
       - checkout
       - run:
@@ -96,8 +92,6 @@ jobs:
 
   test:
     <<: *container_config
-    environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     steps:
       - *attach_workspace
       - run:

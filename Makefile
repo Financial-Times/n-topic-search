@@ -6,10 +6,12 @@ node_modules/@financial-times/n-gage/index.mk:
 
 NODE_VERSION := $(shell node --version)
 NODE_MAJOR_VERSION := $(shell echo $(NODE_VERSION) | cut -c2-3)
-
 ifeq ($(NODE_MAJOR_VERSION),18)
 	NODE_OPTS := "--openssl-legacy-provider --dns-result-order=ipv4first"
 endif
+
+$(info NODE_MAJOR_VERSION -> $(NODE_MAJOR_VERSION))
+$(info NODE_OPTIONS -> $(NODE_OPTS))
 
 demo-build:
 	@NODE_OPTIONS=$(NODE_OPTS) webpack

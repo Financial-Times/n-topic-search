@@ -60,8 +60,6 @@ orbs:
 jobs:
   build:
     <<: *container_config
-    environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     steps:
       - checkout
       - run:
@@ -94,8 +92,6 @@ jobs:
 
   test:
     <<: *container_config
-    environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     steps:
       - *attach_workspace
       - run:
@@ -128,8 +124,6 @@ workflows:
   version: 2
 
   build-test:
-    environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     jobs:
       - build:
           filters:
@@ -147,8 +141,6 @@ workflows:
               node-version: [ "16.20", "18.16" ]
 
   build-test-publish:
-    environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     jobs:
       - build:
           filters:

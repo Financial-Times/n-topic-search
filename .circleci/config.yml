@@ -63,7 +63,7 @@ jobs:
   build:
     <<: *container_config
     environment:
-      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4"
+      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     steps:
       - checkout
       - run:
@@ -96,6 +96,8 @@ jobs:
 
   test:
     <<: *container_config
+    environment:
+      NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
     steps:
       - *attach_workspace
       - run:

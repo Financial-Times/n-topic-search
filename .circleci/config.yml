@@ -102,6 +102,7 @@ jobs:
           environment:
             JEST_JUNIT_OUTPUT: test-results/jest/results.xml
             MOCHA_FILE: test-results/mocha/results.xml
+            NODE_OPTIONS: "--openssl-legacy-provider --dns-result-order=ipv4first"
       - store_test_results:
           path: test-results
       - store_artifacts:

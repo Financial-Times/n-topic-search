@@ -23,7 +23,7 @@ demo: demo-build
 
 a11y: demo-build
 	@NODE_OPTIONS=$(NODE_OPTS) node .pa11yci.js
-	@NODE_OPTIONS=$(NODE_OPTS) PA11Y=true node demos/app PA11Y=true node demos/app
+	@NODE_OPTIONS=$(NODE_OPTS) PA11Y=true node demos/app
 	@$(DONE)
 
 test:

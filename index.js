@@ -87,12 +87,10 @@ class TopicSearch {
 				case 40 :
 					this.onDownArrow(ev);
 					break;
-				default :
-					this.onType(ev);
-					break;
 			}
 		});
 
+		this.searchEl.addEventListener('input', this.onType);
 		this.searchEl.addEventListener('focus', this.onFocus);
 		this.searchEl.addEventListener('click', this.onFocus);
 

@@ -20,13 +20,10 @@
     "@financial-times/n-express": "27.4.0",
     "chalk": "^2.0.1",
     "check-engine": "^1.10.1",
-    "css-loader": "^6.10.0",
     "dotcom-tool-kit": "^3.4.5",
     "lintspaces-cli": "^0.6.0",
-    "node-sass": "^9.0.0",
     "pa11y-ci": "^1.2.0",
     "sass": "^1.51.0",
-    "sass-loader": "^14.1.1",
     "scss-lint": "0.0.0",
     "snyk": "^1.168.0",
     "style-loader": "^3.3.4"

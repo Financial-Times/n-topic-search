@@ -15,7 +15,7 @@ hooks:
     - WebpackProduction
 options:
   "@dotcom-tool-kit/eslint": {
-    files: "{,!(dist)/**/}*.js"
+    files: "{,!(public)/**/}*.js"
   }
   "@dotcom-tool-kit/webpack":
     configPath: "webpack.config.js"

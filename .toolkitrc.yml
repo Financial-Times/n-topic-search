@@ -7,15 +7,16 @@ plugins:
 hooks:
   test:local:
     - Eslint
-    - Mocha
   test:ci:
     - Eslint
-    - Mocha
   build:local:
     - WebpackDevelopment
   build:ci:
     - WebpackProduction
 options:
+  "@dotcom-tool-kit/eslint": {
+    files: "{,!(dist)/**/}*.js"
+  }
   "@dotcom-tool-kit/webpack":
     configPath: "webpack.config.js"
   "@dotcom-tool-kit/circleci":

@@ -32,7 +32,7 @@
     "style-loader": "^3.3.4"
   },
   "scripts": {
-    "demo": "node demos/app",
+    "demo": "npm run demo-build && node demos/app",
     "demo-build": "npm run build && sass demos/src/demo.scss public/main.css --load-path node_modules",
     "test": "dotcom-tool-kit test:local",
     "prepare": "npx snyk protect || npx snyk protect -d || true",

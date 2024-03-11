@@ -1,0 +1,24 @@
+plugins:
+  - "@dotcom-tool-kit/webpack"
+  - "@dotcom-tool-kit/component"
+  - "@dotcom-tool-kit/mocha"
+  - "@dotcom-tool-kit/eslint"
+  - "@dotcom-tool-kit/lint-staged-npm"
+hooks:
+  test:local:
+    - Eslint
+    - Mocha
+  test:ci:
+    - Eslint
+    - Mocha
+  build:local:
+    - WebpackDevelopment
+  build:ci:
+    - WebpackProduction
+options:
+  "@dotcom-tool-kit/webpack":
+    configPath: "webpack.config.js"
+  "@dotcom-tool-kit/circleci":
+    nodeVersion:
+      - '18.16'
+      - '16.20'

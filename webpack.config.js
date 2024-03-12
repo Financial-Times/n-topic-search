@@ -1,10 +1,4 @@
-/*
-This is all the config that is shared amongst an n-ui build as well as an app
-build.
-
-If something is required for both, please add it here.
-*/
-
+const path = require('path');
 
 module.exports = {
 	// Abort the compilation on first error
@@ -13,7 +7,7 @@ module.exports = {
 	// Generate source maps
 	devtool: 'source-map',
 	entry: {
-		'./public/main.js': './demos/src/demo.js'
+		'main.js': './demos/src/demo.js'
 	},
 	resolve: {
 
@@ -42,8 +36,8 @@ module.exports = {
 	},
 
 	output: {
+		path: path.resolve(__dirname, 'public'),
 		filename: '[name]',
 		devtoolModuleFilenameTemplate: 'n-topic-search//[resource-path]?[loaders]'
 	}
-
 };

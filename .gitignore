@@ -3,6 +3,6 @@ bower_components
 /public/
 pa11y_screenCapture
 .editorconfig
-.eslintrc.js
 .stylelintrc
 *.env*
+/.toolkitstate

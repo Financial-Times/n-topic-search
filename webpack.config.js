@@ -36,7 +36,7 @@ module.exports = {
 	},
 
 	output: {
-		path: path.resolve(__dirname, 'public'), // Ruta de salida deseada
+		path: path.resolve(__dirname, 'public'),
 		filename: '[name]',
 		devtoolModuleFilenameTemplate: 'n-topic-search//[resource-path]?[loaders]'
 	}

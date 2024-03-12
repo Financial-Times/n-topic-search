@@ -11,12 +11,9 @@ hooks:
     - Eslint
   build:local:
     - WebpackDevelopment
-  build:ci:
-    - WebpackProduction
 options:
-  "@dotcom-tool-kit/eslint": {
+  "@dotcom-tool-kit/eslint":
     files: "!(public)/**/*.js"
-  }
   "@dotcom-tool-kit/webpack":
     configPath: "webpack.config.js"
   "@dotcom-tool-kit/circleci":
